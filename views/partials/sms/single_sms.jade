@@ -1,0 +1,30 @@
+.img-cont
+  .left-img
+    .img-box
+      img(src='/assets/img/neutral.jpg', alt='')
+    .name
+      h6
+        - if (sms.Type == 0)
+          em From:\ 
+        - else if (sms.Type == 1)
+          em To:\ 
+        - else if (sms.Type == 2)
+          em Draft:\ 
+        span=sms.Number
+      ul
+        - var utcTime = new Date(0);
+        - utcTime.setUTCMilliseconds(sms.Timestamp);
+        - var date = utcTime.toLocaleDateString();
+        - var time = utcTime.toLocaleTimeString();
+        li
+          strong Date:\ 
+          span=date
+        li.sep-li
+        li
+          strong Time:\ 
+          span=time
+  ul.share-ul
+    li
+      a.delete(href='/syncweb/sms/' + sms.id) Delete
+  p.p-cont
+    = sms.Message

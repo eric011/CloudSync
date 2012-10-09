@@ -1,0 +1,25 @@
+.img-cont
+  .left-img
+    .img-box
+      img(src='/assets/img/neutral-1.jpg', alt='')
+    .name
+      h6
+        span= contact.name
+        img(src='/assets/img/star-b.png', alt='')
+      - each number in contact.numbers
+        p
+          strong
+            = number.type
+          strong \ phone\: \ 
+          = number.number
+      - each email in contact.emails
+        p
+          strong
+            = email.type
+          strong \ email\: \ 
+          a(href='mailto: ' + email.email)= email.email
+  ul.share-ul
+    li
+      a.edit(href='/syncweb/contacts/' + contact.id + '/op/edit') Edit
+    li
+      a.delete(href='/syncweb/contacts/' + contact.id) Delete

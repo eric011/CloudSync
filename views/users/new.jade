@@ -1,0 +1,16 @@
+.centre-outbox
+  .centre-inbox
+    .content-box
+      .login-box
+        a.logo-login(href='#')  logo
+        .input-box
+          - each error in errors
+            div.errormessage
+              != error
+          form(method='post', action='/syncweb/users')
+            !=partial('partials/users/fields', { locals: { user: user } })
+            div
+              button.login(type='submit', value='Register') Register
+              a.login(href='/syncweb/sessions/new') Back
+      p.copy-peek
+        | © 2012. Peek.

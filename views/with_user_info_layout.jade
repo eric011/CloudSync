@@ -1,0 +1,17 @@
+extends layout
+
+block user_info
+  header
+    a#logobox(href='/syncweb/contacts')
+      img.headerlogo.align-centre(src='/assets/img/logo.png', alt='Peek cloud sync')
+    #quick-links
+      ul.quick-links
+        li.dropdown
+          a.user-name.dropdown-toggle(href='#', data-toggle='dropdown') #{number}
+          .dropbox
+            .top-drop
+              a(href='/syncweb/settings') Settings
+              a(href='/syncweb/backup') Last backup
+              - if (isAdmin)
+                a(href='/syncweb/admin') Admin Panel
+              a(href='/syncweb/sessions', class='destroy') Sign out

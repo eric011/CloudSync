@@ -1,0 +1,804 @@
+/* GLOBAL FORMATTING */
+/*-------------------*/
+
+html {
+    height: 100%;
+}
+
+body {
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    background-image:url(../img/body-back.jpg);
+}
+
+p {
+    margin: 0;
+}
+
+body,
+p,
+input,
+button,
+select,
+textarea {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+}
+
+
+
+
+/* MAIN HEADER */
+/*-------------*/
+
+header {
+    height: 68px;
+    margin: 10px;
+    margin-top: 0;
+    top: 10px;
+    position: relative;
+    width: 940px;
+
+    max-height: 10%;
+    overflow: visible;
+    min-height: 68px;
+}
+
+#logobox {
+    width: 220px;
+    float: left;
+    buffer: 3px 0;
+}
+
+#quick-links {
+    height: 100%;
+    width: 220px;
+    float: right;
+}
+
+img.headerlogo {
+    width: 164px;
+    height: 62px;
+}
+
+img.align-centre {
+    display: block;
+    margin: 0px auto;
+}
+
+
+
+
+/* BODY */
+/*------*/
+
+#top {
+    margin: 10px 10px 0 10px;
+    height: 39px;
+    width: 938px;
+    float: left;
+    background:url(../img/top-back.jpg);
+    border-left: 1px solid #CDD6E2;
+    border-top: 1px solid #CDD6E2;
+    border-right: 1px solid #CDD6E2;
+
+    max-height: 10%;
+    overflow: hidden;
+    min-height: 39px;
+}
+
+#main {
+    margin: 0 10px;
+    width: 938px;
+    height: 70%;
+    height: 75%;
+    min-height: 300px;
+    overflow: hidden;
+    background: #fafafa;
+    border: 1px solid #CDD6E2;
+}
+
+#left {
+    float: left;
+    width: 218px;
+    height: 100%;
+    min-height: 300px;
+    border-right: 1px solid #CDD6E2;
+    background: #fafafa;
+}
+
+#body {
+    float: left;
+    overflow: scroll;
+    padding: 0 20px;
+    width: 679px;
+    height: 100%;
+    min-height: 300px;
+    background: url(../img/main-right.jpg) right top repeat-y;
+}
+
+#bottom {
+    height: 26px;
+    float: left;
+    width: 719px;
+    margin: 0 10px -10px 10px;
+    background:url(../img/right-bot.jpg) left top repeat-x;
+    border-left: 1px solid #CDD6E2;
+    border-bottom: 1px solid #CDD6E2;
+    border-right: 1px solid #CDD6E2;
+
+    max-height: 10%;
+    overflow: hidden;
+    min-height: 26px;
+
+    padding-left: 219px;
+}
+
+
+
+/* QUICK LINKS */
+/*-------------*/
+
+.quick-links {
+    float: right;
+    list-style: none outside none;
+    margin: 0;
+    padding: 24px 0 0;
+}
+.quick-links li {
+    color: #999999;
+    display: inline;
+    margin: 0 5px;
+}
+.quick-links li
+.quick-links .github-btn,
+.quick-links .tweet-btn,
+.quick-links .follow-btn {
+    top: 5px;
+}
+
+.dropdown.open .dropbox {
+    display: block;
+}
+.dropbox {
+    left: -50px;
+    padding-top: 9px;
+    position: absolute;
+    top: 18px;
+    width: 124px;
+    z-index: 5000;
+    background:url(../img/dropdown_top.png) left top no-repeat;
+    box-shadow: 1px 1px 1px #F5F5F5;
+    display: none;
+}
+
+.top-drop {
+    background:url(../img/dropdown_bot.png) left bottom no-repeat;
+    overflow:hidden;
+    padding:10px 0 0 13px;
+}
+.top-drop a {
+    color: #FFFFFF;
+    display: block;
+    float: none;
+    font-size: 13px;
+    line-height: 11px;
+    margin-bottom: 14px;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.user-name {
+    background:url(../img/right-arrow.png) top right no-repeat;
+    padding-right:20px;
+    color:#555555;
+}
+
+
+
+
+/* SEARCH FIELD */
+/*--------------*/
+
+.search-box {
+    float: right;
+    margin-right: 20px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 220px;
+    height: 29px;
+
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #214B89;
+    border-radius: 23px 23px 23px 23px;
+}
+
+.search-icon {
+    background:url(../img/search-icon.png) left top no-repeat;
+    border: medium none;
+    float: left;
+    height: 16px;
+    margin-left: 8px;
+    margin-top: 7px;
+    text-indent: -9999px;
+    width: 16px;
+}
+
+.input-search {
+    border: medium none navy;
+    float: left;
+    height: 20px;
+    width: 163px;
+}
+
+
+
+
+/* LEFT NAVIGATION */
+/*-----------------*/
+
+.left-nav {
+    margin: 0;
+    overflow: hidden;
+    width: auto;
+}
+.left-nav li {
+    overflow: hidden;
+    width: auto;
+}
+.left-nav li a {
+    background:url(../img/a-bottom.jpg) left bottom repeat-x;
+    color: #777777;
+    display: block;
+    font-weight: 700;
+    font-size: 15px;
+    padding-left:15px;
+    height: 51px;
+    line-height: 51px;
+}
+.left-nav li a span {
+    padding-left:24px;
+}
+.left-nav li a:hover,
+.left-nav .active a {
+    background:url(../img/a-hover.png) left top repeat-x;
+    color:#555;
+    text-decoration:none;
+}
+
+/* The actual navigation buttons */
+.contact span {
+    background:url(../img/con-icon.png) left top no-repeat;
+}
+.pictures span {
+    background:url(../img/pictures-icon.png) left top no-repeat;
+}
+.sms span {
+    background:url(../img/sms-icon.png) left center no-repeat;
+}
+.contact:hover span,
+.left-nav .active .contact span {
+    background:url(../img/con-icon-1.png) left top no-repeat;
+}
+.pictures:hover span,
+.left-nav .active .pictures span {
+    background:url(../img/pictures-1.png) left top no-repeat;
+}
+.sms:hover span,
+.left-nav .active .sms span {
+    background:url(../img/sms-1.png) left center no-repeat;
+}
+
+
+
+
+/* BOTTOM BUTTONS */
+/*------------*/
+
+.delete-one,
+.downlod-one,
+.import-gmail,
+.downlod-all,
+.prevbutton,
+.nextbutton {
+    border-radius: 3px 3px 3px 3px;
+    height: 18px;
+    margin: 3px 5px 0 5px;
+    padding-left: 40px;
+    border: 1px solid #CCD5E1;
+    color: #777777;
+    float: left;
+    font-weight: 700;
+    padding-right: 13px;
+}
+
+.prevbutton,
+.nextbutton {
+    float: right;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.downlod-one,
+.import-gmail,
+.downlod-all {
+    background: url("../img/down-icon.png") no-repeat scroll 6px 4px transparent;
+}
+.delete-one {
+    background: url("../img/trash-icon.png") left top no-repeat;
+    background-position: 0 2px;
+}
+.prevbutton {
+    background: url("../img/left-icon.png") no-repeat scroll 6px 3px transparent;
+}
+.nextbutton {
+    background: url("../img/right-icon.png") no-repeat scroll 6px 3px transparent;
+}
+
+.delete-one:hover,
+.downlod-one:hover,
+.import-gmail:hover,
+.downlod-all:hover,
+.prevbutton:hover,
+.nextbutton:hover {
+    color: #777777;
+    text-decoration:none;
+}
+
+.share-one {
+    height: 20px;
+    margin: 3px 7px 0 3px;
+    padding-left: 40px;
+    color: #777777;
+    float: right;
+    font-weight: 700;
+    padding-right: 13px;
+    background: url("../img/share.png") left top no-repeat;
+}
+
+
+
+
+/* COPYRIGHT FOOTER */
+/*------------------*/
+
+.copy-peek {
+    height: 20px;
+    text-align:center;
+    padding-top:14px;
+}
+
+
+
+
+/* INPUT BOXES */
+/*-------------*/
+
+.input-box {
+    overflow:hidden;
+    padding-top:30px;
+}
+.input-box div {
+    float:left;
+    line-height: 27px;
+    color:#777777;
+}
+.input-box div input {
+    margin-right:5px;
+}
+
+.input-2 {
+    height: 32px;
+    width: 329px;
+    color:#555555;
+    font-size:15px;
+    line-height:32px;
+    margin-bottom:30px;
+}
+
+.bodyform {
+    margin: 20px 0;
+}
+
+
+
+
+/* SESSIONS */
+/*----------*/
+
+.centre-outbox {
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+    display: table;
+    position: static;
+}
+
+.centre-inbox {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.content-box {
+    margin-left: auto;
+    margin-right: auto;
+    position: static;
+}
+
+.login-box {
+    margin: auto;
+    width: 340px;
+
+    background: none repeat scroll 0 0 #FAFAFA;
+    border: 1px solid #C9D2DF;
+    border-radius: 3px 3px 3px 3px;
+    overflow: hidden;
+    padding: 40px 30px 30px 30px;
+}
+
+.logo-login {
+    background:url(../img/logo.png) left top no-repeat;
+    display: block;
+    height: 62px;
+    margin: 0 auto;
+    text-indent: 66em;
+    width: 164px;
+}
+
+.login,
+.login-reset {
+    height: 29px;
+    width: 80px;
+    float: left;
+    margin-right: 20px;
+    padding: 0;
+
+    border: 1px solid #3D5E8E;
+    background:url(../img/button-back.jpg);
+    border-radius: 2px 2px 2px 2px;
+    color: #FFF;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.login:hover {
+    text-decoration:none;
+    color:#FFF;
+}
+
+.login-reset {
+    width: 160px;
+}
+
+
+
+
+/* CONTACTS */
+/*----------*/
+
+.add-contact {
+    float: left;
+    margin-left: 240px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    height: 31px;
+
+    background:url(../img/add-con.jpg);
+    border-left: 1px solid #3D5E8E;
+    border-radius: 3px 3px 3px 3px;
+    border-right: 1px solid #3D5E8E;
+    color: #FFFFFF;
+    font-weight: 700;
+    line-height: 31px;
+    padding: 0 10px;
+}
+.add-contact img {
+    float: left;
+    padding-right: 4px;
+    padding-top: 6px;
+}
+.add-contact:hover {
+    text-decoration:none;
+    color:#FFF;
+}
+
+.img-cont {
+    width: 656px;
+    overflow: hidden;
+    padding: 10px;
+    margin: 20px 0;
+    background: #fff;
+    /*background: url("../img/line.jpg") repeat-y scroll 608px 0 #FFFFFF;*/
+    border: 1px solid #D1D1D3;
+    border-radius: 3px 3px 3px 3px;
+}
+
+.left-img {
+    float: left;
+    width: 556px;
+}
+
+.img-box {
+    float:left;
+}
+.img-box img {
+    float:left;
+    border:solid 1px #efefef;
+}
+
+.name {
+    float:left;
+    padding-left:10px;
+    padding-top:5px;
+    color: #555555;
+}
+.name h6 {
+    color: #555555;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding-bottom:14px;
+}
+.name h6 span {
+    padding-right:10px;
+}
+.name h6 em {
+    font-style:normal;
+    color:#ada748;
+}
+.name h6 .green {
+    color:#439a21;
+}
+.name p strong {
+    font-weight: 700;
+}
+.name ul {
+    overflow:hidden;
+    width:100%;
+    margin:0;
+    list-style:none;
+}
+.name ul li {
+    float: left;
+    line-height: 10px;
+}
+.name ul li strong {
+    font-weight: 700;
+}
+
+
+
+
+/* SMS */
+/*-----*/
+
+.sep-li {
+    background:#a1a1a1;
+    height:13px;
+    margin:0 11px;
+    width:1px;
+}
+
+.p-cont {
+    float: left;
+    margin: 0;
+    padding-top: 13px;
+    padding-right: 107px;
+}
+
+
+
+
+/* PICTURES */
+/*----------*/
+
+.down-ul {
+    margin: 20px 0;
+    overflow: hidden;
+    width: 679px;
+    list-style: none outside none;
+    position: absolute;
+    padding: 0 4px;
+}
+.down-ul li {
+    float: left;
+    line-height: 11px;
+    padding: 17px;
+    width: 100px;
+}
+.down-ul li a {
+    color: #555555;
+    display: block;
+    text-align: center;
+}
+.down-ul li a:hover {
+    text-decoration:none;
+}
+.down-ul li a strong {
+    color: #555555;
+    display: block;
+    font-weight: 700;
+    padding: 10px 0;
+}
+.down-ul li a span {
+    display:block;
+    color:#a1a1a1;
+}
+
+.thumb {
+    float: left;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+.thumb img {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 0px;
+    border-radius: 2px;
+}
+.thumb p {
+    text-align: center;
+}
+
+
+
+.fullimage {
+    width: 679px;
+    margin: 20px 0;
+    list-style: none outside none;
+}
+
+.fullimage li {
+    padding: 17px;
+    width: 645px;
+}
+
+.fullimage p {
+    text-align: center;
+    color: #555555;
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 17px 0 -17px 0;
+}
+.fullimage a:hover {
+    text-decoration:none;
+}
+.fullimage img {
+    width: 645px;
+    height: auto;
+    border: 0px;
+    border-radius: 2px;
+}
+
+
+
+
+/* ITEM BOX ACTIONS */
+/*------------------*/
+
+.share-ul {
+    float: left;
+    margin: 0;
+    width: 100px;
+    list-style: none outside none;
+}
+.share-ul li {
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+.share-ul li a {
+    color: #777777;
+    display: block;
+    font-weight: 700;
+    line-height: 16px;
+    padding-left: 25px;
+}
+.share-ul li a:hover {
+    text-decoration:none;
+}
+
+.edit {
+    background:url(../img/edit-ion.png) left top no-repeat;
+}
+.edit:hover {
+    background-position: 0 -16px;
+}
+
+.share {
+    background:url(../img/share-icon.png) left top no-repeat;
+}
+.share:hover {
+    background-position: 0 -18px;
+}
+
+.delete {
+    background:url(../img/trash-icon.png) left top no-repeat;
+}
+.delete:hover {
+    background-position: 0 -16px;
+}
+
+/* ERRORS */
+/*--------*/
+
+.errormessage {
+    color: #CC3333 !important;
+    font-weight: 700;
+    width: 100%;
+    margin-top: -5px;
+}
+
+/* SETTINGS */
+/*----------*/
+
+.updatebutton,
+.cancelbutton,
+.deleteaccount {
+    height: 28px;
+    width: 120px;
+    float: left;
+    margin-right: 20px;
+    padding: 0;
+
+    border: 1px solid #3D5E8E;
+    background:url(../img/button-back.jpg);
+    border-radius: 2px 2px 2px 2px;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.updatebutton:hover,
+.cancelbutton:hover,
+.deleteaccount:hover {
+    text-decoration:none;
+    color:#FFF;
+}
+
+.cancelbutton,
+.deleteaccount {
+    height: 24px;
+    padding-top: 4px;
+}
+
+.deleteaccount {
+    border: 1px solid #600000;
+    background:url(../img/button-delete.jpg);
+}
+
+.settings {
+    margin: 0;
+    overflow: hidden;
+    width: auto;
+}
+.settings li {
+    overflow: hidden;
+    width: auto;
+    padding-bottom: 20px;
+    list-style-type: none;
+}

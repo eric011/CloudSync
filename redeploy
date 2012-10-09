@@ -1,0 +1,45 @@
+# Script to deploy the current version of sync-service to the
+# test server. There should be an environment variable named PEEK
+# set to the location of the folder containing both the sync-service
+# folder and the devsync01.pem permissions file.
+
+#!/bin/bash
+
+# Zip the sync_service application
+cp -r $PEEK/sync-service ./sync-service &&
+tar -czf sync_service.tar.gz sync-service &&
+
+# Copy the zipped app to the test server
+scp -i $PEEK/devsync01.pem sync_service.tar.gz ubuntu@ec2-devsync01.peeknet.net: &&
+
+# Delete the local zip and temp folder
+rm -rf sync_* &&
+rm -rf sync-service &&
+
+# SSH into the test server
+"ssh" -i $PEEK/devsync01.pem ubuntu@ec2-devsync01.peeknet.net << 'ENDREBOOT'
+
+# Move the tar to the right location
+sudo mv sync_service.tar.gz /mnt &&
+
+# Kill the currently running index.js process
+sudo kill `ps -aef | grep 'index.js' | grep -v grep | awk '{print $2}'`
+
+# Delete the currently deployed app
+sudo rm -rf /mnt/sync-service &&
+
+# Unzip the new app
+sudo tar -zxvf /mnt/sync_service.tar.gz --directory=/mnt &&
+
+# Delete the zip archive
+sudo rm -rf /mnt/sync_*
+
+# Start the new app
+# index.js output is redirected to file nohup.out
+sudo nohup node /mnt/sync-service/index.js > nohup.out 2> nohup.err < /dev/null &
+
+# Exit the SSH session
+ENDREBOOT
+
+# Confirm success
+echo SUCCESS!

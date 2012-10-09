@@ -1,0 +1,27 @@
+#top
+  //a.add-contact(href='/syncweb/contacts/op/new')
+  //  img(src='/assets/img/user-icon.png', alt='')
+  //  | Add contact
+#main
+  #left
+    ul.left-nav
+      li.active
+        a.contact(href='/syncweb/contacts')
+          span  Contacts
+      li
+        a.pictures(href='/syncweb/pictures')
+          span Pictures
+      li
+        a.sms(href='/syncweb/sms')
+          span   SMS
+  #body
+    div.bodyform
+      h2 Edit Contact
+      - each error in errors
+        div.errormessage
+          != error
+      form(method='post', action='/syncweb/contacts/' + contact.id)
+        input(name='contact[id]', value=contact.id, type='hidden')
+        input(name='_method', value='PUT', type='hidden')
+        !=partial('partials/contacts/fields', { locals: { contact: contact } })
+#bottom

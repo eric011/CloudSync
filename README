@@ -1,0 +1,61 @@
+To test this locally, the following need to be installed:
+     * nodeJS: http://nodejs.org/
+     * mongoDB: http://www.mongodb.org/downloads
+     * npm: http://npmjs.org/
+     * node-mongodb-native: https://github.com/christkv/node-mongodb-native
+     * GraphicsMagick
+
+For nodeJS debugging, use node-inspector: https://github.com/dannycoates/node-inspector
+
+To add more paths open app.js and edit it accordingly. To add the logic for each path, edit index.js in routes.
+
+
+
+There is also a script available for redeployment:
+redeploy is a shell script to redeploy the sync-service application to the test server.
+
+To use, set an environment variable named PEEK in your .profile (or similar).
+This environment variable should be set to the location on your local drive of the
+folder containing both the devsync01.pem permissions file and the sync-service folder.
+
+For example:
+export PEEK=/Users/jake/workspace/Peek
+
+Then run ./redeploy to transfer and start the current local version of sync-service
+on the test server.
+
+If redeploy is in a location somewhere in your PATH, it can be run globally by simply
+calling redeploy.
+
+
+
+/**************
+To install GraphicsMagick on Mac:
+***************/
+First, install brew. Simply run the following from a terminal:
+/usr/bin/ruby -e "$(/usr/bin/curl -fsSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
+
+Then, run the following:
+"brew doctor"
+And make any changes it recommends.
+
+Now, run the following to install graphicsmagick:
+brew install graphicsmagick
+It should take about five minutes to complete.
+
+Once the command line libraries have been installed, you should be good to go.
+The node.js library is already included in node_modules.
+Simply use:
+var gm = require('gm');
+or similar.
+
+
+
+/*************
+To install on UNIX:
+**************/
+Get the latest version of GraphicsMagick from the FTP site.
+Run the standard:
+./configure
+make
+make install

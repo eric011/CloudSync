@@ -1,0 +1,31 @@
+#top
+    .search-box
+      form(method='post', action='/syncweb/sms/op/search/')
+        button.search-icon search
+        input.input-search(name='searchTerm', type='text')
+#main
+  #left
+    ul.left-nav
+      li
+        a.contact(href='/syncweb/contacts')
+          span	Contacts
+      li
+        a.pictures(href='/syncweb/pictures')
+          span	Pictures
+      li.active
+        a.sms(href='/syncweb/sms')
+          span	SMS
+  #body
+    - each sms in smss
+      !=partial('partials/sms/single_sms', { sms : sms })
+#bottom
+  - if (next != 0)
+    a.nextbutton(href='/syncweb/sms/op/' + pageSize + '/' + next) Next Page
+  - else
+    a.nextbutton.hidden(href='/syncweb/sms/op/' + pageSize + '/' + next) Next Page
+  - if (prev >= 0)
+    a.prevbutton(href='/syncweb/sms/op/' + pageSize + '/' + prev) Previous Page
+  - else
+    a.prevbutton.hidden(href='/syncweb/sms/op/' + pageSize + '/' + prev) Previous Page
+  - if (smss.length != 0)
+    a.downlod-all(href='/syncweb/sms/op/dl') Download all

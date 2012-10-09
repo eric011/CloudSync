@@ -1,0 +1,27 @@
+#top
+  //a.add-contact(href='/syncweb/contacts/op/new')
+  //  img(src='/assets/img/user-icon.png', alt='')
+  //  | Add contact
+  .search-box
+    form(method='post', action='/syncweb/contacts/op/search/')
+      button.search-icon search
+      input.input-search(name='searchTerm', type='text')
+#main
+  #left
+    ul.left-nav
+      li.active
+        a.contact(href='/syncweb/contacts')
+          span  Contacts
+      li
+        a.pictures(href='/syncweb/pictures')
+          span Pictures
+      li
+        a.sms(href='/syncweb/sms')
+          span   SMS
+  #body
+    - each contact in contacts
+      !=partial('partials/contacts/single_contact', { contact : contact })
+#bottom
+  a.import-gmail(href='/syncweb/contacts/op/gmailOAuth') Import Gmail Contacts
+  - if (contacts.length != 0)
+    a.downlod-all(href='/syncweb/contacts/op/dl') Download all

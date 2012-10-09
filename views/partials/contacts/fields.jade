@@ -1,0 +1,22 @@
+div
+  input(name='contact[name]', value=contact.name || '', type='text', placeholder='Name')
+div(id='inputNum', style='display: none')
+  input(id='numtype', name='', value='', type='text', placeholder='Type')
+  input(id='nums', name='', value='', type='text', placeholder='Number')
+- each number, index in contact.numbers
+  div(id='inputNum' + index, class='clonedNumber')
+    input(id='numtype' + index, name='contact[numtype][' + index + ']', value=number.type || '', type='text', placeholder='Type')
+    input(id='nums' + index, name='contact[nums][' + index + ']', value=number.number || '', type='text', placeholder='Number')
+div
+  input.addnumber(type='button', value='Add Number')
+div(id='inputEm', style='display: none')
+  input(id='emstype', name='', value='', type='text', placeholder='Type')
+  input(id='ems', name='', value='', type='text', placeholder='Email')
+- each email, index2 in contact.emails
+  div(id='inputEm' + index2, class='clonedEmail')
+    input(id='emstype' + index2, name='contact[emstype][' + index2 + ']', value=email.type || '', type='text', placeholder='Type')
+    input(id='ems' + index2, name='contact[ems][' + index2 + ']', value=email.email || '', type='text', placeholder='Email')
+div
+  input.addemail(type='button', value='Add Email')
+div
+  input(type='submit', value='Save Contact')

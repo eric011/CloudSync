@@ -1,0 +1,54 @@
+#top
+#main
+  #left
+    ul.left-nav
+      li
+        a.contact(href='/syncweb/contacts')
+          span Contacts
+      li
+        a.pictures(href='/syncweb/pictures')
+          span Pictures
+      li
+        a.sms(href='/syncweb/sms')
+          span SMS
+  #body
+    div.bodyform
+      h2 Change Password
+      - each error in errors
+        div.errormessage
+          != error
+      form(method='post', action='/syncweb/users')
+        input(name='user[id]', value=user.id, type='hidden')
+        input(name='_method', value='PUT', type='hidden')
+        !=partial('partials/settings/fields', { locals: { user: user } })
+        ul.settings
+          li
+            button.updatebutton(type='submit', value='Update') Update
+      h2 Change email
+      - each error in errors2
+        div.errormessage
+          != error
+      form(method='post', action='/syncweb/users/email')
+        input(name='user[id]', value=user.id, type='hidden')
+        input(name='_method', value='PUT', type='hidden')
+        div
+          input.input-2(name='user[email]', placeholder='New email')
+        ul.settings
+          li
+            button.updatebutton(type='submit', value='Update') Update
+      h2 Change Page Size
+      - each error in errors3
+        div.errormessage
+          != error
+      form(method='post', action='/syncweb/users/pageSize')
+        input(name='user[id]', value=user.id, type='hidden')
+        input(name='_method', value='PUT', type='hidden')
+        div
+          input.input-2(name='user[pageSize]', placeholder='New Page Size')
+        ul.settings
+          li
+            button.updatebutton(type='submit', value='Update') Update
+      ul.settings
+        li
+          a.cancelbutton(href='/syncweb/contacts') Cancel
+          a.deleteaccount(href='/syncweb/users') Delete Account

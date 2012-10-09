@@ -1,0 +1,25 @@
+#top
+#main
+  #left
+    ul.left-nav
+      li
+        a.contact(href='/syncweb/contacts')
+          span  Contacts
+      li.active
+        a.pictures(href='/syncweb/pictures')
+          span Pictures
+      li
+        a.sms(href='/syncweb/sms')
+          span   SMS
+  #body
+    div.fullimage
+      li
+        a(href='/syncweb/pictures/')
+          img(src='/output/' + picture.file_path, alt='')
+          br
+          p
+            = picture.original_file_name
+#bottom
+  a.delete-one(href='/syncweb/pictures/' + picture.id) Delete
+  a.downlod-one(href='/syncweb/pictures/op/dl/' + picture.id) Download
+  a.share-one(href='/syncweb/pictures/op/facebookOAuth/' + picture.id)

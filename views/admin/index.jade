@@ -1,0 +1,26 @@
+#top
+#main
+  #left
+    ul.left-nav
+      li
+        a.contact(href='/syncweb/contacts')
+          span  Contacts
+      li
+        a.pictures(href='/syncweb/pictures')
+          span Pictures
+      li
+        a.sms(href='/syncweb/sms')
+          span   SMS
+  #body
+    .input-box
+      div
+        New New password will be sent to email associated with entered number.
+      - each error in errors
+        div.errormessage
+          != error
+      div
+        form(method='post', action='/syncweb/passwordresetadmin')
+          div
+            input.input-2(name='user[number]', value=user.number || '', type='text', placeholder='Number')
+          div
+            button.login-reset(type='submit', value='Reset Password') Reset Password
